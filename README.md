@@ -1,3 +1,2 @@
 # Will It Rocket?
-Repo for code and other data
-2023-24
+> ThrustMIT repo : source code, datasheets, and references
