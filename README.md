@@ -1,2 +1,4 @@
 # Will It Rocket?
-> ThrustMIT repo : source code, datasheets, and references
+
+> datasheets under [This List](DatasheetList.md).
+
