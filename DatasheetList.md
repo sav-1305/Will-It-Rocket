@@ -10,5 +10,10 @@ https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bm
 https://www.sparkfun.com/datasheets/Components/LM7805.pdf
 
 ### TEENSY4.1
-https://www.pjrc.com/store/teensy41.html
+https://www.pjrc.com/store/teensy41.html'
 
+### Ult. GPS
+https://cdn-learn.adafruit.com/downloads/pdf/adafruit-ultimate-gps.pdf
+
+### MPX5100DP
+https://www.nxp.com/docs/en/data-sheet/MPX5100.pdf
