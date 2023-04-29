@@ -1,4 +1,9 @@
 ## Sensor Specifications
->Supply Voltage - Op.Current - etc
-1. BMP388:  
-i. Supply voltage - 3.3V
+
+| Module  | Supply Voltage |
+|---------|----------------|
+| MPU6050 | 3.3V |
+| BMP388 | 3.3V |
+| Ult. GPS | 5.0V |
+| Xbee S2C | 3.3V |
+| MPX5100DP | 5.0V |
