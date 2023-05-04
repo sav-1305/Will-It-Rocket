@@ -1,3 +1,4 @@
+#thank you satLik in case you see this
 #include <MPU6050_tockn.h>
 #include <Wire.h>
 
