@@ -1,4 +1,3 @@
 # Will It Rocket?
 
-> datasheets under [This List](DatasheetList.md).
-
+> datasheets under [This List](DatasheetList.md).\
