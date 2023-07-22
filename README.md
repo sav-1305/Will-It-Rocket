@@ -1,3 +1,6 @@
 # Will It Rocket?
 
-> datasheets under [This List](DatasheetList.md).\
+Repository for Avionics Team 2025 🚀
+> datasheets under [This List](DatasheetList.md).
+>
+
