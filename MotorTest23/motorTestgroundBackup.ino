@@ -37,13 +37,13 @@ void setup() {
   pinMode(KeyLED, OUTPUT);
   pinMode(ArmLED, OUTPUT);
   pinMode(LaunchLED, OUTPUT);
-  pinMode(KEY, INPUT_PULLDOWN);
-  pinMode(ARM, INPUT_PULLDOWN);
-  pinMode(LAUNCH, INPUT_PULLDOWN);
+  pinMode(KEY_PIN, INPUT_PULLDOWN);
+  pinMode(ARM_PIN, INPUT_PULLDOWN);
+  pinMode(LAUNCH_PIN, INPUT_PULLDOWN);
 
   // NRF
   radio.begin();
-  byte address[][6] = { {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 1} };//  byte address[][6]={00000,00001}; 
+  byte address[][6] = {"00000","00001"};//  byte address[][6]={00000,00001}; 
   radio.setPALevel(RF24_PA_LOW);
   radio.openWritingPipe(address[1]);
   radio.openReadingPipe(1, address[0]);
