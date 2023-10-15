@@ -37,9 +37,9 @@ void setup() {
   pinMode(KeyLED, OUTPUT);
   pinMode(ArmLED, OUTPUT);
   pinMode(LaunchLED, OUTPUT);
-  pinMode(KEY, INPUT_PULLDOWN);
-  pinMode(ARM, INPUT_PULLDOWN);
-  pinMode(LAUNCH, INPUT_PULLDOWN);
+  pinMode(KEY_PIN, INPUT_PULLDOWN);
+  pinMode(ARM_PIN, INPUT_PULLDOWN);
+  pinMode(LAUNCH_PIN, INPUT_PULLDOWN);
 
   // NRF
   radio.begin();
