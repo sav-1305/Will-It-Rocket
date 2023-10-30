@@ -17,7 +17,6 @@ typedef enum {
   KEY,
   ARM,
   LAUNCH,
-  FAILURE,
 } States;
 
 States Current_state = KEY;        //Initial state of the board is KEY.
