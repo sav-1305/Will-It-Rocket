@@ -1,7 +1,6 @@
 /*
 Final ground station code for motor test 2023.
 Componenets-
-SD card for datalogging.
 Teensy 4.1 microcontroller.
 Xbee for communication */
 
@@ -29,7 +28,7 @@ void setup(){
   pinMode(KeyLED, OUTPUT);
   pinMode(ArmLED, OUTPUT);
   pinMode(LaunchLED, OUTPUT);
-  pinMode(KEY_PIN, INPUT_PULLDOWN);
+  pinMode(KEY_PIN, INPUT_PULLDOWN); //configured input pulldown to ensure no floating value.
   pinMode(ARM_PIN, INPUT_PULLDOWN);
   pinMode(LAUNCH_PIN, INPUT_PULLDOWN);
 
