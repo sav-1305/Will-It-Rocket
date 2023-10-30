@@ -20,42 +20,40 @@ typedef enum {
   FAILURE,
 } States;
 
-States Current_state = KEY;
-char message[7];
-byte* mess = (byte*)&message;
+States Current_state = KEY;        //Initial state of the board is KEY.
+char message[7];                   //message array that is being transmitted.
+byte* mess = (byte*)&message;      //Xbees read and transmit bytes.Hence the address is being typecasted to byte address.
 
 void setup(){
   pinMode(KeyLED, OUTPUT);
   pinMode(ArmLED, OUTPUT);
   pinMode(LaunchLED, OUTPUT);
-  pinMode(KEY_PIN, INPUT_PULLDOWN); //configured input pulldown to ensure no floating value.
+  pinMode(KEY_PIN, INPUT_PULLDOWN); //Configured input pulldown to ensure no floating value.
   pinMode(ARM_PIN, INPUT_PULLDOWN);
   pinMode(LAUNCH_PIN, INPUT_PULLDOWN);
 
   Serial.begin(9600);
-  //Xbee serial communication using Seial1.
-  Serial1.begin(9600); 
-
+  Serial1.begin(9600);              //Xbee serial communication using Seial1. 
 }
 
 void loop(){
   switch (Current_state) {
     case KEY:
-      digitalWrite(KeyLED,HIGH);  //initial state key hence it will remain HIGH
+      digitalWrite(KeyLED,HIGH);  //Initial state KEY hence KeyLED it will remain HIGH.
       if (digitalRead(ARM_PIN) == HIGH) {
         digitalWrite(ArmLED,HIGH);
-        Current_state = ARM;
+        Current_state = ARM;      //If ARM pin has been switched ON then Current_State changes to ARM.
         strcpy(message, "ARMON");
         Serial.println("Current state = ARM");
-        Serial1.write(mess, sizeof(message));// if not working try message
-        delay(1000);
+        Serial1.write(mess, sizeof(message));  //If not working try message.
+        delay(1000);              //Delays are necessary when transmitting to avoid debouncing issues when reading toggle pin state.
       }
       break;
 
     case ARM:
       if (digitalRead(LAUNCH_PIN) == HIGH) {
         digitalWrite(LaunchLED,HIGH);
-        Current_state = LAUNCH;
+        Current_state = LAUNCH;    //If LAUNCH pin has been switched ON then Current_State changes to LAUNCH.
         strcpy(message, "LAUNCH");
         Serial.println("Current state = LAUNCH");
         Serial1.write(mess, sizeof(message));
@@ -63,12 +61,12 @@ void loop(){
 
       if (digitalRead(ARM_PIN) == LOW) {
         digitalWrite(ArmLED,LOW);
-        Current_state = KEY;
-        strcpy(message, "ARMOFF");
+        Current_state = KEY;       //If ARM pin has been switched OFF then Current_State changes back to KEY.
+        strcpy(message, "ARMOFF");      
         Serial.println("Current state = KEY");
         Serial1.write(mess, sizeof(message));
       }
-      delay(1000);
+      delay(1000);                //Delays are necessary when transmitting to avoid debouncing issues when reading toggle pin state.
       break;
 
     case LAUNCH:   
